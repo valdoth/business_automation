@@ -33,24 +33,13 @@ git clone [repository-url]
 cd [repository-name]
 ```
 
-2. Create a virtual environment:
-```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-```
-
-3. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
-
-4. Set up environment variables:
+2. Set up environment variables:
 ```bash
 cp .env.example .env
 # Edit .env with your configuration
 ```
 
-5. Start the services:
+3. Start the services:
 ```bash
 docker-compose up --build
 ```
@@ -66,10 +55,9 @@ docker-compose up --build
 
 2. Access the API at `http://localhost:8000`
 3. Access the API documentation at `http://localhost:8000/docs`
+   Access for MINIO: `http://127.0.0.1:9001/login`
+   Access for Neo4j: `http://localhost:7474/browser/`
 
-### Google Colab
-
-A Jupyter notebook is provided for running the system in Google Colab. See `notebooks/colab_demo.ipynb` for details.
 
 ## API Endpoints
 
@@ -104,11 +92,3 @@ pytest
 ## License
 
 MIT License
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request 
