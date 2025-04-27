@@ -29,8 +29,8 @@ The system consists of the following main components:
 
 1. Clone the repository:
 ```bash
-git clone [repository-url]
-cd [repository-name]
+git clone https://github.com/valdoth/business_automation
+cd business_automation
 ```
 
 2. Set up environment variables:
