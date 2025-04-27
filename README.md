@@ -73,12 +73,26 @@ A Jupyter notebook is provided for running the system in Google Colab. See `note
 
 ## API Endpoints
 
-- `POST /scenarios/`: Create a new scenario
-- `POST /scenarios/{id}/run`: Execute a scenario
-- `GET /documents/`: List documents
-- `POST /documents/`: Upload a document
-- `GET /variables/`: List variables
-- `POST /variables/`: Create a variable
+### Documents
+
+- `GET /documents/` - Get all documents
+- `POST /documents/` - Upload a new document
+- `GET /documents/{document_id}` - Get a specific document
+- `GET /documents/{document_id}/download` - Download a document
+
+### Variables
+
+- `GET /variables/` - Get all variables
+- `POST /variables/` - Create a new variable
+- `GET /variables/document/{document_id}` - Get all variables for a document
+- `PUT /variables/{variable_id}` - Update a variable
+
+### Scenarios
+
+- `GET /scenarios/` - Get all scenarios
+- `POST /scenarios/` - Create a new scenario
+- `GET /scenarios/{scenario_id}` - Get a specific scenario
+- `POST /scenarios/{scenario_id}/run` - Execute a scenario
 
 ## Testing
 
