@@ -55,7 +55,9 @@ docker-compose up --build
 
 2. Access the API at `http://localhost:8000`
 3. Access the API documentation at `http://localhost:8000/docs`
+   
    Access for MINIO: `http://127.0.0.1:9001/login`
+   
    Access for Neo4j: `http://localhost:7474/browser/`
 
 
