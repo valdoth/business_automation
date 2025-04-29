@@ -1,21 +1,51 @@
+# FastAPI and related
 fastapi==0.104.1
 uvicorn==0.24.0
+python-multipart==0.0.6
+pydantic==2.4.2
+pydantic-settings==2.0.3
+pydantic[email]==2.4.2
+
+# Database
+sqlalchemy==2.0.25
+psycopg2-binary==2.9.9
+alembic==1.13.1
+neo4j==5.14.0
+python-dotenv==1.0.0
+
+# Authentication
 python-jose[cryptography]==3.3.0
 passlib[bcrypt]==1.7.4
 python-multipart==0.0.6
-neo4j==5.14.0
+email-validator==2.1.0.post1
+
+# Storage
 minio==7.2.0
+
+# Web Automation
+playwright==1.39.0
+
+# PDF Generation
+weasyprint==60.2
+jinja2==3.1.3
+
+# AI and ML
+openai>=1.10.0,<2.0.0
 langchain==0.0.335
-openai==1.3.0
-python-dotenv==1.0.0
-pydantic==2.4.2
-pydantic-settings==2.0.3
+langchain-openai==0.0.5
+
+# Utilities
+python-dateutil==2.8.2
+uuid==1.30
+python-docx==0.8.11
+
+# Testing
 pytest==7.4.3
 httpx==0.25.1
-playwright==1.39.0
-python-docx==0.8.11
 pytest-asyncio==0.21.1
 pytest-cov==4.1.0
+
+# Code Quality
 black==23.10.1
 isort==5.12.0
 mypy==1.6.1 
