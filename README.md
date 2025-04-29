@@ -60,8 +60,13 @@ docker-compose up --build
    
    Access for Neo4j: `http://localhost:7474/browser/`
 
-
 ## API Endpoints
+
+### Authentication
+
+- `POST /auth/token` - Get access token
+- `POST /auth/register` - Register new user
+- `GET /auth/me` - Get current user info
 
 ### Documents
 
@@ -69,28 +74,72 @@ docker-compose up --build
 - `POST /documents/` - Upload a new document
 - `GET /documents/{document_id}` - Get a specific document
 - `GET /documents/{document_id}/download` - Download a document
+- `POST /documents/{document_id}/upload` - Upload a file for a document
 
 ### Variables
 
 - `GET /variables/` - Get all variables
 - `POST /variables/` - Create a new variable
-- `GET /variables/document/{document_id}` - Get all variables for a document
+- `GET /variables/{variable_id}` - Get a specific variable
 - `PUT /variables/{variable_id}` - Update a variable
+- `DELETE /variables/{variable_id}` - Delete a variable
+- `GET /variables/document/{document_id}` - Get all variables for a document
 
 ### Scenarios
 
 - `GET /scenarios/` - Get all scenarios
 - `POST /scenarios/` - Create a new scenario
 - `GET /scenarios/{scenario_id}` - Get a specific scenario
+- `PUT /scenarios/{scenario_id}` - Update a scenario
+- `DELETE /scenarios/{scenario_id}` - Delete a scenario
 - `POST /scenarios/{scenario_id}/run` - Execute a scenario
+- `POST /scenarios/from-pdf` - Create a scenario from PDF
+- `POST /scenarios/{scenario_id}/upload` - Upload a file for a scenario
 
-## Testing
+## Data Models
 
-Run tests using:
+### Document
+```json
+{
+  "id": "string",
+  "type": "string",
+  "minio_key": "string",
+  "metadata": {},
+  "created_at": "datetime",
+  "updated_at": "datetime"
+}
+```
+
+### Variable
+```json
+{
+  "id": "string",
+  "name": "string",
+  "value": "string",
+  "description": "string",
+  "created_at": "datetime",
+  "updated_at": "datetime"
+}
+```
+
+### Scenario
+```json
+{
+  "id": "string",
+  "name": "string",
+  "description": "string",
+  "steps": [],
+  "created_at": "datetime",
+  "updated_at": "datetime",
+  "status": "string"
+}
+```
+
+## Development
+
+### Running Tests
 ```bash
 pytest
 ```
-
-## License
 
 MIT License
