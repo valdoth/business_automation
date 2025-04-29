@@ -11,6 +11,8 @@ services:
       - MINIO_ACCESS_KEY=minioadmin
       - MINIO_SECRET_KEY=minioadmin
       - MINIO_BUCKET=documents
+    networks:
+      - quark_network
     depends_on:
       - neo4j
       - minio
@@ -25,6 +27,8 @@ services:
     volumes:
       - neo4j_data:/data
       - neo4j_logs:/logs
+    networks:
+      - quark_network
 
   minio:
     image: minio/minio
@@ -37,8 +41,14 @@ services:
     volumes:
       - minio_data:/data
     command: server /data --console-address ":9001"
+    networks:
+      - quark_network
 
 volumes:
   neo4j_data:
   neo4j_logs:
-  minio_data: 
+  minio_data:
+
+networks:
+  quark_network:
+    driver: bridge 

@@ -1,7 +1,19 @@
 from pydantic_settings import BaseSettings
-from typing import Optional
+from typing import List, Optional
 
 class Settings(BaseSettings):
+    # Version
+    VERSION: str = "1.0.0"
+    DESCRIPTION: str = "AI-Powered Business Process Automation API"
+    
+    # CORS Settings
+    ALLOWED_ORIGINS: List[str] = ["*"]
+    
+    DATABASE_URL: str = "sqlite:///./sql_app.db"
+    SECRET_KEY: str = "your-secret-key-here"
+    ALGORITHM: str = "HS256"
+    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
+    
     # API Settings
     API_V1_STR: str = "/api/v1"
     PROJECT_NAME: str = "AI-Powered Business Process Automation"
@@ -16,6 +28,7 @@ class Settings(BaseSettings):
     MINIO_ACCESS_KEY: str
     MINIO_SECRET_KEY: str
     MINIO_BUCKET: str
+    MINIO_SECURE: bool = False
     
     # AI Settings
     OPENAI_API_KEY: Optional[str] = None
